@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import de.tgehring.itdb.client.desktop.view.*?>
+
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml" fx:controller="de.tgehring.itdb.client.desktop.controller.DruckerController">
+  
+	<stylesheets>
+		<URL value="@css/style.css" />
+	</stylesheets>
+	<center>
+    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab fx:id="druckerTab" text="Drucker">
+          <content>
+            <BorderPane id="" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <center>
+                <HBox alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <GridPane>
+                      <children>
+                      	<Text id="welcome-text" fontSmoothingType="GRAY" text="Drucker" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        					<font>
+          						<Font size="20.0" />
+        					</font>
+					    </Text>
+	      				<Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+					    <TextField fx:id="idField" disable="true" editable="false" maxWidth="75.0" minWidth="75.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+					    <Label text="Bezeichnung:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+					    <TextField fx:id="bezeichnungField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+					    <Label text="Gerätenummer:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+					    <TextField fx:id="gNummerField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+					    <Label text="Inventarnummer:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+					    <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+							<children>
+								<TextField fx:id="iNummerField" minWidth="180.0" maxWidth="180.0" />
+								<CheckBox fx:id="iNummerCheckBox" mnemonicParsing="false" text="" />
+							</children>
+						</HBox>
+					    <Label text="Hersteller:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+					    <SuggestComboBox fx:id="herstellerComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+					    <Label text="Rechnung:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+					    <SuggestComboBox fx:id="rechnungComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+					    <Label text="Lieferant:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+					    <SuggestComboBox fx:id="lieferantComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+					    <HBox alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="335.0" spacing="10.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="8">
+					    	<Button fx:id="createButton" onAction="#handleCreateButtonAction" text="Erstellen" />
+					        <Button fx:id="editButton" onAction="#handleEditButtonAction" text="Speichern" />
+					        <Button fx:id="deleteButton" onAction="#handleDeleteButtonAction" text="Löschen" />
+					        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#handleResetButtonAction" text="Reset" />
+					    </HBox>
+					    <TableView fx:id="druckerTable" minWidth="-Infinity" prefHeight="299.0" prefWidth="300.0" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="10">
+					   		<columns>
+					        	<TableColumn editable="false" maxWidth="50.0" minWidth="25.0" prefWidth="50.0" resizable="false" text="ID" fx:id="idColumn">
+					            	<cellValueFactory>
+					            		<PropertyValueFactory property="id" />
+					            	</cellValueFactory>
+					          	</TableColumn>
+					          	<TableColumn editable="false" maxWidth="255.0" prefWidth="150.0" sortable="false" text="Bezeichnung" fx:id="bezeichnungColumn">
+					            	<cellValueFactory>
+					              		<PropertyValueFactory property="bezeichnung" />
+					            	</cellValueFactory>
+					          	</TableColumn>
+					          	<TableColumn editable="false" maxWidth="255.0" minWidth="10.0" prefWidth="125.0" sortable="false" text="Hersteller" fx:id="herstellerColumn">
+					            	<cellValueFactory>
+					              		<PropertyValueFactory property="hersteller" />
+				            		</cellValueFactory>
+					          	</TableColumn>
+				        	</columns>
+				      	</TableView>
+                   	</children>
+                   	<columnConstraints>
+        				<ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="125.0" minWidth="125.0" />
+        				<ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="225.0" minWidth="225.0" />
+        				<ColumnConstraints fillWidth="true" maxWidth="450.0" minWidth="250.0" prefWidth="370.0" />
+      				</columnConstraints>
+                  	<rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                  </children>
+                </HBox>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+        <Tab fx:id="dvmTab" text="Druckerverbauchsmaterial">
+          <content>
+            <BorderPane id="" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <center>
+                <HBox alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <GridPane>
+                      <children>
+						  <Text id="welcome-text" fontSmoothingType="GRAY" text="Druckerverbrauchsmaterial" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+					      <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+					      <TextField fx:id="dvmIdField" disable="true" editable="false" maxWidth="75.0" minWidth="75.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+					      <Label text="Schwarz (groß):" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+					      <TextField fx:id="schwarzGrossField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+					      <Label text="Schwarz:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+					      <TextField fx:id="schwarzField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+					      <Label text="Colorpack:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+					      <TextField fx:id="colorpackField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+					      <Label text="Cyan:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+					      <TextField fx:id="cyanField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+					      <Label text="Magenta:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+					      <TextField fx:id="magentaField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+					      <Label text="Yellow:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+					      <TextField fx:id="yellowField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+					      <Label text="Tonerbezeichnung:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+					      <TextField fx:id="tonerField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+					      <Label text="Leitereinheit:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+					      <TextField fx:id="leitereinheitField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                  </children>
+                </HBox>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </center>
+</BorderPane>

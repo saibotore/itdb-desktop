@@ -1,0 +1,35 @@
+#welcome-text {
+	-fx-font-size:20;
+}
+
+.clickableLabel {
+	-fx-font-size: 16;
+}
+
+.button {
+	-fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+}
+
+.clickableLabel:hover {
+	-fx-stroke: #00f;
+	-fx-font-size: 20;
+	-fx-font-weight: bold;
+	-fx-cursor: hand;
+	-fx-underline: true;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+	-fx-background-color: white, linear-gradient(
+        to bottom,
+        white 95%, 
+        #d0d0d0 100%
+    );
+    -fx-effect: null;
+}
+.tab {
+	-fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+}
+
+.notificationBar {
+	-fx-fill-width: true;
+}

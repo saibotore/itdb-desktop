@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import de.tgehring.itdb.client.desktop.view.*?>
+
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml" fx:controller="de.tgehring.itdb.client.desktop.controller.TabletController">
+  <stylesheets>
+		<URL value="@css/style.css" />
+	</stylesheets>
+	<center>
+    <GridPane alignment="CENTER" hgap="10.0" prefWidth="-1.0" styleClass="root" vgap="10.0" BorderPane.alignment="CENTER">
+      <Text id="welcome-text" fontSmoothingType="GRAY" text="Tablet" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <font>
+          <Font size="20.0" />
+        </font>
+      </Text>
+      <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <TextField fx:id="idField" disable="true" editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Bezeichnung:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+      <TextField id="firstnameField" fx:id="bezeichnungField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="IP:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+      <IPField fx:id="ipField" prefWidth="100.0" promptText="" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Subnet:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+      <Label text="Gateway:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+      <IPField fx:id="gatewayField" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label text="Primärer DNS:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+      <IPField fx:id="pDnsField" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label text="Sekundärer DNS:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+      <IPField fx:id="sDnsField" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Label text="Benutzer:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+      <SuggestComboBox fx:id="benutzerComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <IPField fx:id="subnetField" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label text="Hersteller:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+      <SuggestComboBox fx:id="herstellerComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+      <Label text="Rechnung:" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+      <SuggestComboBox fx:id="rechnungComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+      <Label text="Lieferant:" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+      <SuggestComboBox fx:id="lieferantComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="335.0" spacing="10.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="13">
+        <Button fx:id="createButton" onAction="#handleCreateButtonAction" text="Erstellen" />
+        <Button fx:id="editButton" onAction="#handleEditButtonAction" text="Speichern" />
+        <Button fx:id="deleteButton" onAction="#handleDeleteButtonAction" text="Löschen" />
+        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#handleResetButtonAction" text="Reset" />
+      </HBox>
+      <columnConstraints>
+        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" />
+        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" />
+        <ColumnConstraints fillWidth="true" maxWidth="450.0" minWidth="250.0" prefWidth="370.0" />
+      </columnConstraints>
+      <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints maxHeight="27.0" prefHeight="27.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="0.0" prefHeight="0.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="0.0" prefHeight="0.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+      </rowConstraints>
+      <Text id="actiontarget" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+      <TableView id="userTable" fx:id="tabletTable" minWidth="-Infinity" prefHeight="299.0" prefWidth="300.0" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="11">
+        <columns>
+          <TableColumn editable="false" maxWidth="50.0" minWidth="25.0" prefWidth="50.0" resizable="false" text="ID" fx:id="idColumn">
+            <cellValueFactory>
+              <PropertyValueFactory property="id" />
+            </cellValueFactory>
+          </TableColumn>
+          <TableColumn editable="false" maxWidth="255.0" prefWidth="150.0" sortable="false" text="Bezeichnung" fx:id="bezeichnungColumn">
+            <cellValueFactory>
+              <PropertyValueFactory property="bezeichnung" />
+            </cellValueFactory>
+          </TableColumn>
+          <TableColumn editable="false" maxWidth="255.0" prefWidth="100.0" sortable="false" text="Hersteller" fx:id="herstellerColumn">
+            <cellValueFactory>
+              <PropertyValueFactory property="hersteller" />
+            </cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+    </GridPane>
+  </center>
+</BorderPane>

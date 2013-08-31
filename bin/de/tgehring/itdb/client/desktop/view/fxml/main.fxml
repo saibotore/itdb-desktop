@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="de.tgehring.itdb.client.desktop.controller.MainController">
+ <stylesheets>
+		<URL value="@css/style.css" />
+	</stylesheets>
+	<center>
+    <GridPane alignment="CENTER" BorderPane.alignment="TOP_CENTER">
+      <children>
+        <Label onMouseClicked="#startAbteilungView" styleClass="clickableLabel" text="Abteilung" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+        <Label onMouseClicked="#startBenutzerView" styleClass="clickableLabel" text="Benutzer" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+        <Label onMouseClicked="#startCpuView" styleClass="clickableLabel" text="Cpu" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+        <Label onMouseClicked="#startDruckerView" styleClass="clickableLabel" text="Drucker" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+        <Label onMouseClicked="#startGebäudeView" styleClass="clickableLabel" text="Gebäude" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+        <Label onMouseClicked="#startGpuView" styleClass="clickableLabel" text="Gpu" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+        <Label onMouseClicked="#startHerstellerView" styleClass="clickableLabel" text="Hersteller" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+        <Label onMouseClicked="#startLieferantView" styleClass="clickableLabel" text="Lieferant" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+        <Label onMouseClicked="#startMonitorView" styleClass="clickableLabel" text="Monitor" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+        <Label onMouseClicked="#startRechnerView" styleClass="clickableLabel" text="Rechner" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+        <Label onMouseClicked="#startRechnungView" styleClass="clickableLabel" text="Rechnung" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+        <Label onMouseClicked="#startSoftwareView" styleClass="clickableLabel" text="Software" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+        <Label onMouseClicked="#startTabletView" styleClass="clickableLabel" text="Tablet" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+        <Label onMouseClicked="#startTodoView" styleClass="clickableLabel" text="Todo" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </center>
+  <stylesheets>
+    <URL value="@css/style.css" />
+  </stylesheets>
+</BorderPane>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml" fx:controller="de.tgehring.itdb.client.desktop.controller.GebäudeController">
+	<stylesheets>
+		<URL value="@css/style.css" />
+	</stylesheets>
+	<center>
+    <GridPane alignment="CENTER" hgap="10.0" prefWidth="-1.0" styleClass="root" vgap="10.0" BorderPane.alignment="CENTER">
+      <Text id="welcome-text" fontSmoothingType="GRAY" text="Gebäude" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <font>
+          <Font size="20.0" />
+        </font>
+      </Text>
+      <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <TextField fx:id="idField" disable="true" editable="false" maxWidth="75.0" minWidth="75.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Bezeichnung:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+      <TextField fx:id="bezeichnungField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Straße:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+      <TextField fx:id="strasseField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Postleitzahl:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+      <TextField fx:id="plzField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label text="Ort:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+      <TextField fx:id="ortField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="335.0" spacing="10.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+        <Button fx:id="createButton" onAction="#handleCreateButtonAction" text="Erstellen" />
+        <Button fx:id="editButton" onAction="#handleEditButtonAction" text="Speichern" />
+        <Button fx:id="deleteButton" onAction="#handleDeleteButtonAction" text="Löschen" />
+        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#handleResetButtonAction" text="Reset" />
+      </HBox>
+      <columnConstraints>
+        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" />
+        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" />
+        <ColumnConstraints fillWidth="true" maxWidth="450.0" minWidth="250.0" prefWidth="370.0" />
+      </columnConstraints>
+      <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints maxHeight="27.0" prefHeight="27.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="0.0" prefHeight="0.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+        <RowConstraints maxHeight="0.0" prefHeight="0.0" />
+        <RowConstraints maxHeight="24.0" prefHeight="24.0" />
+      </rowConstraints>
+      <TableView id="userTable" fx:id="gebäudeTable" minWidth="-Infinity" prefHeight="299.0" prefWidth="300.0" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="11">
+        <columns>
+          <TableColumn editable="false" maxWidth="50.0" minWidth="25.0" prefWidth="50.0" resizable="false" text="ID" fx:id="idColumn">
+            <cellValueFactory>
+              <PropertyValueFactory property="id" />
+            </cellValueFactory>
+          </TableColumn>
+          <TableColumn editable="false" maxWidth="255.0" prefWidth="255.0" sortable="false" text="Bezeichnung" fx:id="bezeichnungColumn">
+            <cellValueFactory>
+              <PropertyValueFactory property="bezeichnung" />
+            </cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+    </GridPane>
+  </center>
+</BorderPane>

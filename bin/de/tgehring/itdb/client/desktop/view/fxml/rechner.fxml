@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import de.tgehring.itdb.client.desktop.view.*?>
+
+<BorderPane id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+	prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml"
+	fx:controller="de.tgehring.itdb.client.desktop.controller.RechnerController">
+	<stylesheets>
+		<URL value="@css/style.css" />
+	</stylesheets>
+	<center>
+		<TabPane prefHeight="200.0" prefWidth="200.0"
+			tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab fx:id="rechnerTab" text="Rechner">
+					<content>
+						<BorderPane id="" minHeight="0.0" minWidth="0.0"
+							prefHeight="180.0" prefWidth="200.0">
+							<center>
+								<HBox alignment="CENTER" fillHeight="false" prefHeight="100.0"
+									prefWidth="200.0">
+									<children>
+										<GridPane>
+											<children>
+												<Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+												<TextField fx:id="idField" disable="true" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+												<Label text="CPU:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+												<SuggestComboBox fx:id="cpuComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+												<Label text="GPU:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+												<SuggestComboBox fx:id="gpuComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+												<Label text="Ram:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+												<TextField fx:id="ramField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+												<Label text="Laufwerk 1:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+												<TextField fx:id="laufwerk1Field" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+												<Label text="Laufwerk 2:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+												<TextField fx:id="laufwerk2Field" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+												<Label text="Hdd 1:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+												<TextField fx:id="hdd1Field" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+												<Label text="Hdd 2:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+												<TextField fx:id="hdd2Field" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+												<Label text="Hdd 3:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+												<TextField fx:id="hdd3Field" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+												<Label text="Hdd 4:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+												<TextField fx:id="hdd4Field" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+												<Label text="Monitor:" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+												<SuggestComboBox fx:id="monitorComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+												<Label text="Inventarnummer:" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+													  <HBox alignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="0">
+														<children>
+															<TextField fx:id="iNummerField" minWidth="180.0" maxWidth="180.0" />
+															<CheckBox fx:id="iNummerCheckBox" mnemonicParsing="false" text="" />
+														</children>
+													</HBox>
+												<Label text="Gerätenummer:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+												<TextField fx:id="gNummerField" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+												<Label text="Gebäude:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+												<SuggestComboBox fx:id="gebäudeComboBox" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+												<Label text="Abteilung:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+												<SuggestComboBox fx:id="abteilungComboBox" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+												<Label text="Benutzer:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+												<SuggestComboBox fx:id="benutzerComboBox" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+												<Label text="Computername" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+												<TextField fx:id="cNameField" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+												<Label text="Arbeitsgruppe:" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+												<TextField fx:id="aGruppeField" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+												<Label text="Domäne:" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+												<TextField fx:id="domäneField" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+												<Label text="Garantie bis:" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+												<HBox alignment="CENTER" fillHeight="true" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="8">
+													<children>
+														<DateField fx:id="warrantyDayField" prefWidth="200.0" promptText="DD" />
+														<DateField fx:id="warrantyMonthField" prefWidth="200.0" promptText="MM" />
+														<DateField fx:id="warrantyYearField" prefWidth="200.0" promptText="YYYY" />
+													</children>
+												</HBox>
+												<Label text="Anmerkungen:" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+												<TextArea fx:id="anmerkungenField" prefWidth="200.0" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="9" GridPane.rowSpan="2" />
+
+												<Label text="IP-Adresse 1:" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+												<IPField fx:id="ip1Field" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="0" />
+												<Label text="Subnet 1:" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+												<IPField fx:id="subnet1Field" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+												<Label text="Gateway:" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+												<IPField fx:id="gatewayField" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+												<Label text="Primärer DNS" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+												<IPField fx:id="pDnsField" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+												<Label text="Sekundärer DNS" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+												<IPField fx:id="sDnsField" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+												<Label text="IP-Adresse 2:" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+												<IPField fx:id="ip2Field" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+												<Label text="Subnet 2:" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+												<IPField fx:id="subnet2Field" prefWidth="100.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+												<Label text="Hersteller:" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+												<SuggestComboBox fx:id="herstellerComboBox" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+												<Label text="Lieferant:" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+												<SuggestComboBox fx:id="lieferantComboBox" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+												<Label text="Rechnung:" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+												<SuggestComboBox fx:id="rechnungComboBox" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+												<Label text="Letzte Wartung:" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+												<HBox alignment="CENTER" fillHeight="true" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="10">
+													<children>
+														<DateField fx:id="maintenanceDayField" prefWidth="200.0" promptText="DD" />
+														<DateField fx:id="maintenanceMonthField" prefWidth="200.0" promptText="MM" />
+														<DateField fx:id="maintenanceYearField" prefWidth="200.0" promptText="YYYY" />
+													</children>
+												</HBox>
+
+												<HBox alignment="CENTER" prefHeight="24.0" prefWidth="335.0" spacing="10.0" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="11">
+													<Button fx:id="createButton" onAction="#handleCreateButtonAction" text="Erstellen" />
+													<Button fx:id="editButton" onAction="#handleEditButtonAction" text="Speichern" />
+													<Button fx:id="deleteButton" onAction="#handleDeleteButtonAction" text="Löschen" />
+													<Button fx:id="resetButton" mnemonicParsing="false" onAction="#handleResetButtonAction" text="Reset" />
+													<CheckBox fx:id="ausrangiertCheckBox" mnemonicParsing="false" text="ausrangiert" />
+												</HBox>
+											</children>
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+												<ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+												<ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+												<ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="200.0" minWidth="100.0" prefWidth="200.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+										</GridPane>
+									</children>
+								</HBox>
+							</center>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="softwareTab" text="Software">
+					<content>
+						<BorderPane id="" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+							<center>
+								<HBox alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+									<children>
+										<GridPane>
+											<children>
+												<SuggestComboBox fx:id="softwareComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+												<Label text="Software:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+												<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+													<children>
+														<Button fx:id="addSoftwareButton" mnemonicParsing="false" onAction="#handleAddSoftwareAction" prefWidth="85.0" text="Hinzufügen" />
+													</children>
+												</HBox>
+												<ListView fx:id="softwareList" prefHeight="200.0" prefWidth="200.0" style="" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="5" />
+												<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+													<children>
+														<Button fx:id="removeSoftwareButton" mnemonicParsing="false" onAction="#handleRemoveSoftwareAction" prefWidth="85.0" text="Entfernen" />
+													</children>
+												</HBox>
+											</children>
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+										</GridPane>
+									</children>
+								</HBox>
+							</center>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="allTab" text="Alle">
+					<content>
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<center>
+								<HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+									<children>
+										<TableView fx:id="rechnerTable" editable="false" maxWidth="450.0" prefHeight="519.0" prefWidth="-1.0">
+											<columns>
+												<TableColumn maxWidth="75.0" prefWidth="50.0" text="ID" fx:id="idColumn">
+													<cellValueFactory>
+														<PropertyValueFactory property="id" />
+													</cellValueFactory>
+												</TableColumn>
+												<TableColumn maxWidth="255.0" prefWidth="125.0" text="Inventarnummer" fx:id="iNummerColumn">
+													<cellValueFactory>
+														<PropertyValueFactory property="inventarnummer" />
+													</cellValueFactory>
+												</TableColumn>
+												<TableColumn maxWidth="255.0" prefWidth="125.0" text="Computername" fx:id="cNameColumn">
+													<cellValueFactory>
+														<PropertyValueFactory property="computername" />
+													</cellValueFactory>
+												</TableColumn>
+												<TableColumn maxWidth="255.0" prefWidth="125.0" text="Benutzer" fx:id="benutzerColumn">
+													<cellValueFactory>
+														<PropertyValueFactory property="benutzer" />
+													</cellValueFactory>
+												</TableColumn>
+											</columns>
+										</TableView>
+										<GridPane>
+											<children>
+												<Label text="Filter" GridPane.columnIndex="0" GridPane.rowIndex="0">
+													<font>
+														<Font size="18.0" />
+													</font>
+												</Label>
+												<Label text="Inventarnummer:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+												<Label text="Ram:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+												<Label text="Hdd:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+												<Label text="Cpu:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+												<Label text="Gpu:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+												<TextField fx:id="filterNummerField" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+												<TextField fx:id="filterRamField" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+												<TextField fx:id="filterHddField" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+												<TextField fx:id="filterCpuField" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+												<TextField fx:id="filterGpuField" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+												<HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="TOP">
+													<children>
+														<Button id="filterOKButton" fx:id="filterSubmitButton" mnemonicParsing="false" onAction="#handleFilterSubmitAction" prefHeight="22.0001220703125" text="Anwenden">
+															<HBox.margin>
+																<Insets right="10.0" top="10.0" />
+															</HBox.margin>
+														</Button>
+														<Button fx:id="filterResetButton" mnemonicParsing="false" onAction="#handleFilterResetAction" text="Reset">
+															<HBox.margin>
+																<Insets top="10.0" />
+															</HBox.margin>
+														</Button>
+													</children>
+												</HBox>
+											</children>
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+											<HBox.margin>
+												<Insets left="50.0" />
+											</HBox.margin>
+										</GridPane>
+									</children>
+									<BorderPane.margin>
+										<Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+									</BorderPane.margin>
+								</HBox>
+							</center>
+						</BorderPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+</BorderPane>
